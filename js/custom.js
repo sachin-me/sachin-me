@@ -6,3 +6,9 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
   });
+
+
+//for the Parallax effect
+  $(document).ready(function(){
+    $('.parallax').parallax();
+  });

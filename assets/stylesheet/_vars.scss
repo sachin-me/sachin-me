@@ -1,0 +1,20 @@
+$font-family: 'Lato', sans-serif;
+$primary-color: #08fdd8;
+$secondary-color: #84c450;
+$primary-text-color: #fff;
+$secondary-text-color: #8d8d8d;
+$third-text-color: #4d4d4e;
+$font-size: 16px;
+
+%flex {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-around;
+	flex-direction: column;
+}
+
+%grid {
+	display: grid;
+	// justify-content: center;
+	grid-gap: 0;
+}

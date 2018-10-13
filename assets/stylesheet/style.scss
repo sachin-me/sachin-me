@@ -1,0 +1,380 @@
+@import 'base';
+@import 'grid';
+
+
+body {
+    background: #444;
+}
+
+//==================
+//Container
+//==================
+
+
+.main-container {
+    @extend %grid;
+    grid-template-columns: 1fr 9fr;
+    margin: 0;
+    padding: 0; 
+}  
+
+//==================
+//Nav bar
+//==================
+
+.navbar {
+    @extend %grid;
+    grid-gap: 50px;
+    height: 100vh;
+    width: 80px;
+    background: #181818;
+    // padding: 10px;
+    text-align: center;
+}
+
+.logo {
+    position: relative;
+    text-decoration: none;
+    height: 50%;
+    background: #070707;
+    h1 {
+        text-shadow: 1px 1px #f44168;
+        color: skyblue;
+        color: #08fdd8 !important;
+        font-size: $font-size*2;
+        font-family: 'Overpass', sans-serif;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 25%;
+    }
+  }
+
+// Nav
+
+.nav {
+    @extend %grid;
+    grid-template-rows: repeat(5, 1fr);
+    // grid-gap: 20px;
+    i {
+        font-size: 1.4em; 
+    }
+    .home {
+        display: none;
+    }
+    .about {
+        display: none;
+    }
+    .skill {
+        display: none;
+    }
+    .work {
+        display: none;
+    }
+    .contact {
+        display: none;
+    }
+}
+
+.nav__link:nth-child(1) {
+    &:hover {
+        .home {
+            display: block;
+            text-transform: uppercase;
+        }
+        .home-icon {
+            display: none;
+        }  
+    }
+}
+
+.nav__link:nth-child(2) {
+    &:hover {
+        .about {
+            display: block;
+            text-transform: uppercase;
+        }
+        .about-icon {
+            display: none;
+        }  
+    }
+}
+
+.nav__link:nth-child(3) {
+    &:hover {
+        .skill {
+            display: block;
+            text-transform: uppercase;
+        }
+        .skill-icon {
+            display: none;
+        }  
+    }
+}
+
+.nav__link:nth-child(4) {
+    &:hover {
+        .work {
+            display: block;
+            text-transform: uppercase;
+        }
+        .work-icon {
+            display: none;
+        }  
+    }
+}
+
+.nav__link:nth-child(5) {
+    &:hover {
+        .contact {
+            display: block;
+            text-transform: uppercase;
+        }
+        .contact-icon {
+            display: none;
+        }  
+    }
+}
+
+
+
+.nav__link {
+    color: $third-text-color;
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+//Side-navbar
+
+// .sidebar-input {
+//     display: none;
+// }
+
+// .input-label {
+//     color: #0087cc;
+//     cursor: pointer;
+//     display: inline-block;
+//     font-size: 18px;
+//     padding: 5px 9px;
+//     transition: all .15s ease;
+//     &:hover {
+//         color: #ff7b29;
+//     }
+//     &:checked ~ nav {
+//         max-height: 500px;
+//     }
+// }
+// label
+// input:checked + label {
+//     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+//     color: #9799a7;
+// }
+// nav {
+//     max-height: 0;
+//     overflow: hidden;
+//     transition: all .15s ease;
+// }
+// input:checked ~ nav {
+//     max-height: 500px;
+// }
+// .side-nav__list {
+//     list-style: none;
+//     margin: 8px 0 0 0;
+//     li {
+//         border-bottom: 1px solid #cecfd5;
+//         &:last-child {
+//             border-bottom: 0;
+//         }
+//     }
+// }
+
+// .side-nav__link {
+//     color: #0087cc;
+//     display: block;
+//     padding: 6px 12px;
+//     text-decoration: none;
+//     &:hover {
+//         color: #ff7b29;
+//     }
+// }
+
+// .side-navbar {
+//     display: none;
+// }
+
+//Social
+
+.social {
+    @extend %grid;
+    grid-template-rows: repeat(4, 1fr)
+}
+
+.icon__link {
+    i {
+        color: $third-text-color;
+        font-size: 1.5em;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+//==================
+//Main-page
+//==================
+
+.main-page {
+    @extend %grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100vh;
+}
+
+.main {
+    position: relative;
+    padding: 30px 0;
+    @extend %grid;
+    grid-template-rows: repeat(3, 1fr);
+    code {
+        display: block;
+        color: #9a9a9c;
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 1.5em;
+    }
+}
+
+.main__details {
+    position: absolute;
+    top: 25%;
+    h2 {
+        color: $primary-text-color;
+        font-size: 3em;
+        span {
+            text-shadow: 1px 1px #f44168;
+            color: skyblue;
+            color: #08fdd8 !important;
+            font-size: $font-size*3;
+            font-family: 'Overpass', sans-serif;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 25%;
+            display: contents;
+        }
+    }
+    .btn {
+        background: transparent;
+        border: 2px solid $primary-color;
+        border-radius: 6px;
+        color: $primary-color;
+        padding: 10px;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover {
+            background: $primary-color;
+            color: #252627;
+        }
+        margin-top: 20px;
+        outline: none;
+    }
+}
+
+.about-me {
+    color: $primary-text-color;
+    padding: 30px 0;
+    font-size: 1.5em;
+}
+
+.main__code {
+    position: absolute;
+    top: 90%;
+}
+
+.main-logo {
+    position: relative;
+    img {
+        position: absolute;
+        top: 10%;
+        opacity: 0.7;
+    }
+}
+
+
+//==================
+//Skills
+//==================
+
+.skills__icon {
+    @extend %grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin: 30px 0;
+}
+
+.user-skill {
+    height: 150px;
+    background: $primary-text-color;
+    width: 200px;
+    position: relative;
+    opacity: 0.4;
+    img {
+        width: 100%;
+    }
+    i {
+        font-size: 6em;
+        color: #4d4d4e;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:hover {
+        opacity: 1;
+        box-shadow: 8px 10px 20px 0 rgba(46,61,73,.15);
+    }
+}
+
+//==================
+//Project
+//==================
+
+.project-container {
+    @extend %grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 22px;
+}
+
+.project-img {
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    &:hover {
+        .project__link {
+            display: block;
+        }
+    }
+}
+
+.project__link {
+    position: relative;
+    display: none;
+    .project-icon {
+        font-size: 2em;
+        background: #222;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        color: #fff;
+    }
+}
+
+
+//==================
+//Responsive
+//==================
+
+@media (max-width: 1180px) {
+    
+}

@@ -1,0 +1,87 @@
+// ==========================
+// Variables
+// ==========================
+$columns: 12;
+$gutter-width: 60px;
+$col-width: 100% / $columns;
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 $gutter-width / 2;
+}
+.container-fluid {
+	margin: 0 auto;
+	padding: 0 $gutter-width / 2;
+}
+
+[class*='col-'] {
+	width: 100%;
+	min-height: 1px;
+	float: left;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+@for $i from $columns through 1 {
+	.col-xs-#{ $i } {
+		width: $col-width * $i;
+	}
+}
+
+
+@media all and (min-width: 576px) {
+	@for $i from $columns through 1 {
+		.col-sm-#{ $i } {
+			width: $col-width * $i;
+		}
+	}
+	@for $i from $columns through 1 {
+		.col-sm-offset-#{ $i } {
+			margin-left: $col-width * $i;
+		}
+	}
+}
+@media all and (min-width: 768px) {
+	.container {
+		max-width: 750px;
+	}
+	@for $i from $columns through 1 {
+		.col-md-#{ $i } {
+			width: $col-width * $i;
+		}
+	}
+	@for $i from $columns through 1 {
+		.col-md-offset-#{ $i } {
+			margin-left: $col-width * $i;
+		}
+	}
+}
+@media all and (min-width: 992px) {
+	@for $i from $columns through 1 {
+		.col-lg-#{ $i } {
+			width: $col-width * $i;
+		}
+	}
+	@for $i from $columns through 1 {
+		.col-lg-offset-#{ $i } {
+			margin-left: $col-width * $i;
+		}
+	}
+}
+@media all and (min-width: 1200px) {
+	.container {
+		max-width: 1200px;
+	}
+	@for $i from $columns through 1 {
+		.col-xl-#{ $i } {
+			width: $col-width * $i;
+		}
+	}
+	@for $i from $columns through 1 {
+		.col-xl-offset-#{ $i } {
+			margin-left: $col-width * $i;
+		}
+	}
+}
